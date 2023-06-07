@@ -91,7 +91,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup Condition="'$(WindowsAppSdkPackageVersion)' != ''">
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="[$(WindowsAppSdkPackageVersion)]" GeneratePathProperty="true">
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.230518007-experimental1" GeneratePathProperty="true">
       <IncludeAssets>build</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="[$(MicrosoftWindowsSDKBuildToolsNugetPackageVersion)]">

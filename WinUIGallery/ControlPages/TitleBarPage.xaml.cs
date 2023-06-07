@@ -65,13 +65,13 @@ namespace AppUIBasics.ControlPages
             var window = WindowHelper.GetWindowForElement(this as UIElement);
             if (window.ExtendsContentIntoTitleBar)
             {
-                customTitleBar.Content = "Reset to system TitleBar";
-                defaultTitleBar.Content = "Reset to system TitleBar";
+                customTitleBar.Content = "Reset to System TitleBar";
+                defaultTitleBar.Content = "Reset to System TitleBar";
             }
             else
             {
                 customTitleBar.Content = "Set Custom TitleBar";
-                defaultTitleBar.Content = "Set Fallback Custom TitleBar";
+                defaultTitleBar.Content = "Set Default Custom TitleBar";
             }
 
         }

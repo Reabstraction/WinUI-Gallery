@@ -112,7 +112,8 @@ namespace AppUIBasics
 
             NavigationViewControl.RegisterPropertyChangedCallback(NavigationView.PaneDisplayModeProperty, new DependencyPropertyChangedCallback(OnPaneDisplayModeChanged));
         }
-        // this handles updating the caption button colors correctly when indows system theme is changed
+        // workaround for Appwindow titlebar theming issue https://task.ms/44172495
+        // this handles updating the caption button colors correctly when windows system theme is changed
         // while the app is open
         private void _settings_ColorValuesChanged(UISettings sender, object args)
         {
