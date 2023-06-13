@@ -134,5 +134,33 @@
             </local:ControlExample.Example>
 
         </local:ControlExample>
+        <local:ControlExample HeaderText="Titlebar Customizations : Interactive controls in Titlebar (non client) area"
+                              CSharpSource="Window\TitleBar\TitleBarSample3.txt">
+            <local:ControlExample.Example>
+                <StackPanel Orientation="Vertical" Spacing="10">
+                    <TextBlock TextWrapping="WrapWholeWords">
+                        WinUI custom titlebar now hosting interactive clickable controls within non client region of the window, when using custom titlebar.
+                        <LineBreak></LineBreak>
+                        This is achieved by using lower level
+                        <Hyperlink NavigateUri="https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar">
+                           Microsoft.UI.AppwindowTitlebar
+                        </Hyperlink>
+                        and
+                        <Italic>Microsoft.UI.NonClientInputPointerSource apis</Italic>/
+                        <LineBreak></LineBreak>
+                        <LineBreak></LineBreak>
+                        WinUI allows  <Bold> mix and match </Bold> of higher level WinUI custom titlebar apis with lower level Appwindow and NonClientInputPointerSource apis for most cases.
+                        One exception is one should not use <Italic> Window.SetTitlebar </Italic> api along with any lower level api which also sets drag regions as it can result in unexpected behavior.
+                        If needed, set <Italic> Window.SetTitlebar </Italic> to null (default case) and proceed to use lower level apis for drag functionality.
+                        <LineBreak></LineBreak>
+                        Use the button below to toggle between system titlebar and default custom titlebar.
+                    </TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top" Spacing="20">
+                        <Button x:Name="addInteractiveElements" Click="AddInteractiveElements_Click">Add interactive controls to titlebar</Button>
+                    </StackPanel>
+                </StackPanel>
+            </local:ControlExample.Example>
+        </local:ControlExample>
+
     </StackPanel>
 </Page>

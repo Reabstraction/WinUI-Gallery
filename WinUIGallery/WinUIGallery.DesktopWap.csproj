@@ -91,6 +91,7 @@
   <ItemGroup>
     <None Remove="Assets\Tiles\GalleryIcon.ico" />
     <None Remove="ControlPagesSampleCode\Typography\TypographySample_xaml.txt" />
+    <None Remove="ControlPagesSampleCode\Window\TitleBar\TitleBarSample3.txt" />
     <None Remove="ControlPages\DesignGuidance\ColorsPage.xaml" />
     <None Remove="ControlPages\InfoBadgePage.xaml" />
     <None Remove="ControlPages\LinePage.xaml" />
@@ -124,6 +125,7 @@
     <Content Include="Assets\Tiles\TitlebarLogo.png" />
     <Content Include="Assets\Typography.dark.png" />
     <Content Include="Assets\Typography.light.png" />
+    <Content Include="ControlPagesSampleCode\Window\TitleBar\TitleBarSample3.txt" />
     <Content Include="DataModel\IconsData.json" />
   </ItemGroup>
   <ItemGroup>
