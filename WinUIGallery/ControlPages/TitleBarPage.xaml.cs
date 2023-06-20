@@ -81,6 +81,7 @@ namespace AppUIBasics.ControlPages
             ClearClickThruRegions();
             var txtBoxNonClientArea = UIHelper.FindElementByName(this as UIElement, "AppTitleBarTextBox") as FrameworkElement;
             txtBoxNonClientArea.Visibility = Visibility.Collapsed;
+            addInteractiveElements.Content = "Add interactive control to titlebar";
         }
 
         private void SetClickThruRegions(Windows.Graphics.RectInt32[] rects)
@@ -175,6 +176,7 @@ namespace AppUIBasics.ControlPages
             }
             else
             {
+                addInteractiveElements.Content = "Remove interactive control from titlebar";
                 txtBoxNonClientArea.Visibility = Visibility.Visible;
                 if (!sizeChangedEventHandlerAdded)
                 {

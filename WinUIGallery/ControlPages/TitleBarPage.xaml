@@ -146,7 +146,7 @@
                            Microsoft.UI.AppwindowTitlebar
                         </Hyperlink>
                         and
-                        <Italic>Microsoft.UI.NonClientInputPointerSource apis</Italic>/
+                        <Italic>Microsoft.UI.NonClientInputPointerSource apis</Italic>
                         <LineBreak></LineBreak>
                         <LineBreak></LineBreak>
                         WinUI allows  <Bold> mix and match </Bold> of higher level WinUI custom titlebar apis with lower level Appwindow and NonClientInputPointerSource apis for most cases.
@@ -156,7 +156,7 @@
                         Use the button below to toggle between system titlebar and default custom titlebar.
                     </TextBlock>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top" Spacing="20">
-                        <Button x:Name="addInteractiveElements" Click="AddInteractiveElements_Click">Add interactive controls to titlebar</Button>
+                        <Button x:Name="addInteractiveElements" Click="AddInteractiveElements_Click">Add interactive control to titlebar</Button>
                     </StackPanel>
                 </StackPanel>
             </local:ControlExample.Example>
