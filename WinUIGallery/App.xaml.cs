@@ -113,7 +113,12 @@ namespace AppUIBasics
             IdleSynchronizer.Init();
 
             startupWindow = WindowHelper.CreateWindow();
-            startupWindow.ExtendsContentIntoTitleBar = true;
+            var appTitleBar = startupWindow.AppWindow.TitleBar;
+            appTitleBar.ExtendsContentIntoTitleBar = true;
+            appTitleBar.BackgroundColor = Microsoft.UI.Colors.Transparent;
+            appTitleBar.ButtonBackgroundColor = Microsoft.UI.Colors.Transparent;
+            appTitleBar.ButtonInactiveBackgroundColor = Microsoft.UI.Colors.Transparent;
+            appTitleBar.PreferredHeightOption = Microsoft.UI.Windowing.TitleBarHeightOption.Tall;
 #if DEBUG
             //if (System.Diagnostics.Debugger.IsAttached)
             //{

@@ -111,6 +111,23 @@
             </local:ControlExample.Example>
 
         </local:ControlExample>
+
+        <local:ControlExample HeaderText="Height"
+                              CSharpSource="Window\TitleBar\TitleBarSample3.txt">
+            <local:ControlExample.Example>
+                <StackPanel Orientation="Vertical" Spacing="10">
+                    <TextBlock TextWrapping="WrapWholeWords">
+                        WinUI provides the ability to change the size of the titlebar controls to be bigger for use with titlebar content.
+                         <LineBreak></LineBreak>
+                        It can be applied by using the PreferredHeightOption of AppWindow.
+                    </TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top" Spacing="20">
+                        <Button x:Name="sizeTitleBar" Click="sizeTitleBar_Click">Set TitleBar size to ???</Button>
+                    </StackPanel>
+                </StackPanel>
+            </local:ControlExample.Example>
+        </local:ControlExample>
+
         <local:ControlExample HeaderText="Fallback titlebar when no user defined titlebar is set"
                               CSharpSource="Window\TitleBar\TitleBarSample2.txt">
             <local:ControlExample.Example>

@@ -51,7 +51,11 @@ namespace AppUIBasics.SamplePages
         {
             this.InitializeComponent();
             ((FrameworkElement)this.Content).RequestedTheme = AppUIBasics.Helper.ThemeHelper.RootTheme;
-            ExtendsContentIntoTitleBar = true;
+            var appTitleBar = this.AppWindow.TitleBar;
+            appTitleBar.ExtendsContentIntoTitleBar = true;
+            appTitleBar.BackgroundColor = Microsoft.UI.Colors.Transparent;
+            appTitleBar.ButtonBackgroundColor = Microsoft.UI.Colors.Transparent;
+            appTitleBar.ButtonInactiveBackgroundColor = Microsoft.UI.Colors.Transparent;
             SetTitleBar(titleBar);
             m_wsdqHelper = new WindowsSystemDispatcherQueueHelper();
             m_wsdqHelper.EnsureWindowsSystemDispatcherQueueController();

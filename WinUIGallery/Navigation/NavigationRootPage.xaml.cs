@@ -93,7 +93,11 @@ namespace AppUIBasics
 
                 Window window = WindowHelper.GetWindowForElement(sender as UIElement);
                 window.Title = AppTitleText;
-                window.ExtendsContentIntoTitleBar = true;
+                var appTitleBar = window.AppWindow.TitleBar;
+                appTitleBar.ExtendsContentIntoTitleBar = true;
+                appTitleBar.BackgroundColor = Microsoft.UI.Colors.Transparent;
+                appTitleBar.ButtonBackgroundColor = Microsoft.UI.Colors.Transparent;
+                appTitleBar.ButtonInactiveBackgroundColor = Microsoft.UI.Colors.Transparent;
                 window.Activated += Window_Activated;
                 window.SetTitleBar(this.AppTitleBar);
 

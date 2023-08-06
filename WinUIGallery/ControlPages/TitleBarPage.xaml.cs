@@ -45,14 +45,22 @@ namespace AppUIBasics.ControlPages
         private void SetTitleBar(UIElement titlebar)
         {
             var window = WindowHelper.GetWindowForElement(this as UIElement);
-            if (!window.ExtendsContentIntoTitleBar)
+            if (!window.AppWindow.TitleBar.ExtendsContentIntoTitleBar)
             {
-                window.ExtendsContentIntoTitleBar = true;
+                var appTitleBar = window.AppWindow.TitleBar;
+                appTitleBar.ExtendsContentIntoTitleBar = true;
+                appTitleBar.BackgroundColor = Microsoft.UI.Colors.Transparent;
+                appTitleBar.ButtonBackgroundColor = Microsoft.UI.Colors.Transparent;
+                appTitleBar.ButtonInactiveBackgroundColor = Microsoft.UI.Colors.Transparent;
                 window.SetTitleBar(titlebar);
             }
             else
             {
-                window.ExtendsContentIntoTitleBar = false;
+                var appTitleBar = window.AppWindow.TitleBar;
+                appTitleBar.ExtendsContentIntoTitleBar = false;
+                appTitleBar.BackgroundColor = null;
+                appTitleBar.ButtonBackgroundColor = null;
+                appTitleBar.ButtonInactiveBackgroundColor = null;
                 window.SetTitleBar(null);
 
             }
@@ -63,7 +71,7 @@ namespace AppUIBasics.ControlPages
         public void UpdateButtonText()
         {
             var window = WindowHelper.GetWindowForElement(this as UIElement);
-            if (window.ExtendsContentIntoTitleBar)
+            if (window.AppWindow.TitleBar.ExtendsContentIntoTitleBar)
             {
                 customTitleBar.Content = "Reset to system TitleBar";
                 defaultTitleBar.Content = "Reset to system TitleBar";
@@ -73,7 +81,14 @@ namespace AppUIBasics.ControlPages
                 customTitleBar.Content = "Set Custom TitleBar";
                 defaultTitleBar.Content = "Set Fallback Custom TitleBar";
             }
-
+            if (window.AppWindow.TitleBar.PreferredHeightOption == Microsoft.UI.Windowing.TitleBarHeightOption.Tall)
+            {
+                sizeTitleBar.Content = "Set TitleBar to Standard Height";
+            }
+            else
+            {
+                sizeTitleBar.Content = "Set TitleBar to Tall Height";
+            }
         }
 
         private void BgGridView_ItemClick(object sender, ItemClickEventArgs e)
@@ -121,6 +136,26 @@ namespace AppUIBasics.ControlPages
             // announce visual change to automation
             UIHelper.AnnounceActionForAccessibility(sender as UIElement, "TitleBar size and width changed", "TitleBarChangedNotificationActivityId");
         }
+
+        private void sizeTitleBar_Click(object sender, RoutedEventArgs e)
+        {
+            var window = WindowHelper.GetWindowForElement(this as UIElement);
+            var appTitleBar = window.AppWindow.TitleBar;
+
+            if(appTitleBar.PreferredHeightOption == Microsoft.UI.Windowing.TitleBarHeightOption.Tall)
+            {
+                appTitleBar.PreferredHeightOption = Microsoft.UI.Windowing.TitleBarHeightOption.Standard;
+            }
+            else
+            {
+                appTitleBar.PreferredHeightOption = Microsoft.UI.Windowing.TitleBarHeightOption.Tall;
+            }
+
+            UpdateButtonText();
+
+            UIHelper.AnnounceActionForAccessibility(sender as UIElement, "TitleBar height option changed", "TitleBarChangedNotificationActivityId");
+        }
+
         private void defaultTitleBar_Click(object sender, RoutedEventArgs e)
         {
             SetTitleBar(null);

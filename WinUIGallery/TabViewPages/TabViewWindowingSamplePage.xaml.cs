@@ -32,7 +32,11 @@ namespace AppUIBasics.TabViewPages
         private void TabViewWindowingSamplePage_Loaded(object sender, RoutedEventArgs e)
         {
             var currentWindow = WindowHelper.GetWindowForElement(this);
-            currentWindow.ExtendsContentIntoTitleBar = true;
+            var appTitleBar = currentWindow.AppWindow.TitleBar;
+            appTitleBar.ExtendsContentIntoTitleBar = true;
+            appTitleBar.BackgroundColor = Microsoft.UI.Colors.Transparent;
+            appTitleBar.ButtonBackgroundColor = Microsoft.UI.Colors.Transparent;
+            appTitleBar.ButtonInactiveBackgroundColor = Microsoft.UI.Colors.Transparent;
             currentWindow.SetTitleBar(CustomDragRegion);
             CustomDragRegion.MinWidth = 188;
         }
@@ -115,7 +119,11 @@ namespace AppUIBasics.TabViewPages
             newPage.AddTabToTabs(args.Tab);
 
             var newWindow = WindowHelper.CreateWindow();
-            newWindow.ExtendsContentIntoTitleBar = true;
+            var appTitleBar = newWindow.AppWindow.TitleBar;
+            appTitleBar.ExtendsContentIntoTitleBar = true;
+            appTitleBar.BackgroundColor = Microsoft.UI.Colors.Transparent;
+            appTitleBar.ButtonBackgroundColor = Microsoft.UI.Colors.Transparent;
+            appTitleBar.ButtonInactiveBackgroundColor = Microsoft.UI.Colors.Transparent;
             newWindow.Content = newPage;
 
             newWindow.Activate();
